@@ -18,7 +18,7 @@ Library room booking is usually a bit of a maze: separate pages, too many clicks
 - **API:** REST-style endpoints (JSON)
 - **PWA:** Web App Manifest + Service Worker
 
-## Project structure (example)
+## Project structure (short)
 ```bash
 uniroom/
 backend/           # Django project
