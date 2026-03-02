@@ -1,0 +1,86 @@
+/* ===== Calendar layout ===== */
+
+.calendar-viewport {
+  overflow: auto;
+  max-height: calc(100vh - 220px); /* feels good on laptops + mobile */
+  border-radius: 12px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 8px;
+  align-items: start;
+  min-width: 700px; /* allows horizontal scroll on mobile */
+}
+
+.time-col {
+  width: 70px;
+  flex: 0 0 auto;
+}
+
+.time-label {
+  height: var(--slot-height);
+  font-size: 12px;
+  color: #6c757d;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-right: 6px;
+  box-sizing: border-box;
+}
+
+.room-col {
+  width: 240px;
+  flex: 0 0 auto;
+}
+
+.room-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}
+
+.timeline {
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.slot-row {
+  height: var(--slot-height);
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.busy-block {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  border-radius: 10px;
+  padding: 6px 8px;
+  font-size: 12px;
+  background: rgba(220, 53, 69, 0.12); /* bootstrap danger-ish tint */
+  border: 1px solid rgba(220, 53, 69, 0.25);
+}
+
+.busy-title {
+  font-weight: 600;
+  color: #842029;
+}
+
+.busy-time {
+  color: #6c757d;
+}
+
+/* mobile tweaks */
+@media (max-width: 576px) {
+  .room-col { width: 220px; }
+  .calendar-grid { min-width: 620px; }
+}
